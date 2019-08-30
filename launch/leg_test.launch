@@ -6,7 +6,7 @@
     <!-- <rosparam command="load" file="$(find reemc_controller_configuration_gazebo)/config/reemc_pal_hardware_gazebo.yaml"/> -->
 
     <!-- PID gains -->
-    <!-- <rosparam command="load" file="$(find reemc_controller_configuration_gazebo)/config/pids.yaml"/> -->
+    <rosparam command="load" file="$(find lobot_simulation)/controller_configuration_gazebo/basic_control.yaml"/>
 
     <!-- Walking controller parameters -->
     <!-- <include file="$(find reemc_controller_configuration_gazebo)/launch/load_walking_params.launch"/> -->
@@ -22,7 +22,7 @@
 
     <!-- Joint limits -->
     <!-- <rosparam command="load" file="$(find reemc_description)/config/joint_limits.yaml"/> -->
-
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="lobot" args="joint1_position_controller joint2_position_controller" />
     <!-- Spawn robot in Gazebo -->
     <node pkg="gazebo_ros" type="spawn_model" name="spawn_model" args="-urdf -param robot_description $(arg gzpose) -model leg_test" />
 
