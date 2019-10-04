@@ -39,7 +39,7 @@
             <axis xyz="0 1 0" />
             <parent link="${parent}" />
             <child link="arm_${side}_1_link" />
-            <limit lower="-1.57" upper="1.57" effort="50" velocity="4" />
+            <limit lower="-1.57" upper="1.57" effort="50" velocity="40" />
         </joint>
 
         <link name="arm_${side}_2_link">
@@ -68,7 +68,7 @@
             <axis xyz="1 0 0" />
             <parent link="arm_${side}_1_link" />
             <child link="arm_${side}_2_link" />
-            <limit lower="${-90*deg_to_rad}" upper="${90*deg_to_rad}" effort="50" velocity="4" />
+            <limit lower="${-90*deg_to_rad}" upper="${90*deg_to_rad}" effort="50" velocity="40" />
         </joint>
 
         <link name="arm_${side}_3_link">
@@ -97,7 +97,7 @@
             <axis xyz="1 0 0" />
             <parent link="arm_${side}_2_link" />
             <child link="arm_${side}_3_link" />
-            <limit lower="${-90*deg_to_rad}" upper="${90*deg_to_rad}" effort="50" velocity="4" />
+            <limit lower="${-90*deg_to_rad}" upper="${90*deg_to_rad}" effort="50" velocity="40" />
         </joint>
         <!-- Gripper fixed link-->
         <link name="gripper_${side}_link">
