@@ -1,5 +1,4 @@
 <robot name="lobot" xmlns:xacro="http://ros.org/wiki/xacro">
-
     <xacro:include filename="$(find lobot_description)/urdf/materials.urdf.xacro" />
     <link name="world" />
     <joint name="world_joint" type="fixed">
