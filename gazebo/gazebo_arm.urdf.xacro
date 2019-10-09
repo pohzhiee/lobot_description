@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- define global properties -->
+  <xacro:property name="M_PI" value="3.1415926535897931" />
+  <xacro:macro name="gazebo_macro" params="robot control_update_rate status_update_rate">
+    <gazebo>
+      <plugin filename="libmy_joint_state_publisher.so" name="${robot}_joint_state_publisher">
+        <robot_name>${robot}</robot_name>
+        <update_rate>${status_update_rate}</update_rate>
+      </plugin>
+    </gazebo>
+
+    <gazebo>
+      <plugin filename="librobot_plugin.so" name="robot_plugin_${robot}">
+        <robot_name>${robot}</robot_name>
+        <update_rate>${control_update_rate}</update_rate>
+      </plugin>
+    </gazebo>
+  </xacro:macro>
+
+</robot>
